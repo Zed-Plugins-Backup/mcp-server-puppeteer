@@ -23,7 +23,7 @@ impl zed::Extension for PuppeteerModelContextExtension {
         }
 
         Ok(Command {
-            command: "node".to_string(),
+            command: zed::node_binary_path()?,
             args: vec![env::current_dir()
                 .unwrap()
                 .join(SERVER_PATH)
